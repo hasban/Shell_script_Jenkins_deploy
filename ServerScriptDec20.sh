@@ -24,37 +24,37 @@ ENABLE_SILENTSETUP=Y
 POSIBOLT_BRANCH="POSRetail"
 
 ### Mail Address ###
-ADMIN_MAIL_IDs="sysadmins@posibolt.com"
-DEVELOPER_MAIL_IDs="noufalas@gmail.com sarjith@posibolt.com"
-CC_LIST="shaijal@posibolt.com"
+ADMIN_MAIL_IDs="admins@abcd.com"
+DEVELOPER_MAIL_IDs="abc@abcd.com def@abc.com"
+CC_LIST="sha@abc.com"
 
 ####################################### Workspace Setup ####################################### 
 
 ### Export Path ###
-ANT="/opt/apache-ant-1.8.2/bin/ant"
-export JAVA_HOME="/opt/jdk1.6.0_30"
+ANT="apache-ant-1/bin/ant"
+export JAVA_HOME="/jdk1.6.0"
 export _JAVA_OPTIONS=-Djava.io.tmpdir=/periyarOS/tmp
 
 #set svn working copy location
 if [ $POSIBOLT_BRANCH == "POSRetail" ]
 then
-   SVNDIR=/home/jenkins/workspace/POSRetail
+   SVNDIR=/workspace/POSRetail
    WORK_NAME="POSRetail"
 elif [ $POSIBOLT_BRANCH == "POSTrunk" ]
 then
-   SVNDIR=/home/jenkins/workspace/POSTrunk
+   SVNDIR=/workspace/POSTrunk
    WORK_NAME="POSTrunk"
 elif [ $POSIBOLT_BRANCH == "POSibolt-7.8" ]
 then
-   SVNDIR=/home/jenkins/workspace/POSibolt-7.8
+   SVNDIR=/workspace/POSibolt-7.8
    WORK_NAME="POSibolt-7.8"
 elif [ $POSIBOLT_BRANCH == "POScw" ]
 then
-   SVNDIR=/home/jenkins/workspace/POScw
+   SVNDIR=/workspace/POScw
    WORK_NAME="POScw"
 elif [ $POSIBOLT_BRANCH == "POSIndigo" ]
 then
-   SVNDIR=/home/jenkins/workspace/PosiboltIndigo
+   SVNDIR=/workspace/PosiboltIndigo
    WORK_NAME="POSIndigo"
 else
    echo "Please Choose Posibolt Branch for Update"
@@ -263,7 +263,7 @@ else
 fi
 
 /usr/bin/printf "\n"
-FILE_REV_CUR=`cat $SVNDIR/360trunk/posterita/posterita/web/jsp/include/version.jsp | awk -F ' ' '{print $NF}' `
+FILE_REV_CUR=`cat $SVNDIR/web/jsp/include/version.jsp | awk -F ' ' '{print $NF}' `
 echo "Current File Version : $FILE_REV_CUR"
 
 ##################################### Checking & Copying Files #######################################
