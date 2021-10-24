@@ -17,12 +17,12 @@ DATE=20Nov20
 
 ademp_values()
 {
-JENKINS_DIR=~/jenkins
-export JAVA_HOME=`grep "JAVA_HOME" $ADEMPIERE_HOME/AdempiereEnv.properties  |  cut  -d"=" -f2`
-DB_USER=`grep "ADEMPIERE_DB_USER" $ADEMPIERE_HOME/AdempiereEnv.properties  |  cut  -d"=" -f2`
-DB_NAME=`grep "ADEMPIERE_DB_NAME" $ADEMPIERE_HOME/AdempiereEnv.properties  |  cut  -d"=" -f2`
-DB_PORT=`grep "ADEMPIERE_DB_PORT" $ADEMPIERE_HOME/AdempiereEnv.properties  |  cut  -d"=" -f2`
-DB_PASS=`grep "ADEMPIERE_DB_PASSWORD" $ADEMPIERE_HOME/AdempiereEnv.properties  |  cut  -d"=" -f2`
+        JENKINS_DIR=~/jenkins
+        export JAVA_HOME=`grep "JAVA_HOME" $ADEMPIERE_HOME/AdempiereEnv.properties  |  cut  -d"=" -f2`
+        DB_USER=`grep "ADEMPIERE_DB_USER" $ADEMPIERE_HOME/AdempiereEnv.properties  |  cut  -d"=" -f2`
+        DB_NAME=`grep "ADEMPIERE_DB_NAME" $ADEMPIERE_HOME/AdempiereEnv.properties  |  cut  -d"=" -f2`
+        DB_PORT=`grep "ADEMPIERE_DB_PORT" $ADEMPIERE_HOME/AdempiereEnv.properties  |  cut  -d"=" -f2`
+        DB_PASS=`grep "ADEMPIERE_DB_PASSWORD" $ADEMPIERE_HOME/AdempiereEnv.properties  |  cut  -d"=" -f2`
 }
 
 ademp_values
