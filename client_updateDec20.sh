@@ -33,19 +33,19 @@ echo $INSTANCE_NAME > $Astatuslog
 
 ademp_stop()
 {   
-    ademp_values
-    AD_CHECK=`ps -ef | grep -w $ADEMPIERE_HOME | grep -v grep  | wc -l`
-    while [ $AD_CHECK -gt 0 ];
-    do
-    echo  "Adempiere pid : $(ps -ef | grep -w $ADEMPIERE_HOME |grep -v grep | awk '{print $2}')"
-    kill -9 $(ps -ef | grep -w $ADEMPIERE_HOME |grep -v grep | awk '{print $2}')
-    sleep 5
-    AD_CHECK=`ps -ef | grep -w $ADEMPIERE_HOME |grep -v grep  | wc -l`
-    done
-    set +e
-    rm -rf $ADEMPIERE_HOME/jboss/server/adempiere/tmp $ADEMPIERE_HOME/jboss/server/adempiere/work 2>/dev/null
-    set -e
-    echo "$INSTANCE_NAME Adempiere Stopped" && echo "Adempiere Stopped" >> $Astatuslog
+        ademp_values
+        AD_CHECK=`ps -ef | grep -w $ADEMPIERE_HOME | grep -v grep  | wc -l`
+        while [ $AD_CHECK -gt 0 ];
+        do
+                echo  "Adempiere pid : $(ps -ef | grep -w $ADEMPIERE_HOME |grep -v grep | awk '{print $2}')"
+                kill -9 $(ps -ef | grep -w $ADEMPIERE_HOME |grep -v grep | awk '{print $2}')
+                sleep 5
+                AD_CHECK=`ps -ef | grep -w $ADEMPIERE_HOME |grep -v grep  | wc -l`
+        done
+        set +e
+        rm -rf $ADEMPIERE_HOME/jboss/server/adempiere/tmp $ADEMPIERE_HOME/jboss/server/adempiere/work 2>/dev/null
+        set -e
+        echo "$INSTANCE_NAME Adempiere Stopped" && echo "Adempiere Stopped" >> $Astatuslog
 }
 
 ademp_start()
@@ -81,10 +81,10 @@ ademp_start()
 
 restart()
 {
-    echo "$INSTANCE_NAME Adempiere Restarting...."
-    ademp_stop
-    ademp_start
-    exit 0
+        echo "$INSTANCE_NAME Adempiere Restarting...."
+        ademp_stop
+        ademp_start
+        exit 0
 } 
         
 case "$1" in
@@ -200,5 +200,5 @@ fi
 echo "Completed"
 
 ## JEN_POS_Rsh:3.0 Jboss ##
-## hasban ## 
-## 20Nov2020 ## 204Lns ##
+## hasban_mohammed ## 
+## 24Oct2021 ## 204Lns ## Aligned #
